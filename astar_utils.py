@@ -1,6 +1,6 @@
-import math
 from queue import PriorityQueue
 import random
+import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib.animation as animation
 import seaborn as sns
@@ -80,7 +80,7 @@ def heuristic_cost(grid, h_i):
                     continue
                 x = int((grid[i][j] - 1) / 3)
                 y = (grid[i][j] - 1) % 3
-                cost += math.sqrt((x - i) ** 2 + (y - j) ** 2)
+                cost += np.sqrt((x - i) ** 2 + (y - j) ** 2)
         return cost
 
 def solve_puzzle(grid, h_i):
